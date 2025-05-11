@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tadbeer Kitchen</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Tadbeer Kitchen</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Delicious Meals</h1>
+        <p>Savor the flavors of our homemade dishes crafted with care and heritage.</p>
+        <a href="#" class="btn">View Menu</a>
+      </div>
+      <div class="hero-image">
+        <img src="dish.jpg" alt="Delicious Persian Dish" />
+      </div>
+    </section>
+  </main>
+</body>
+</html>
