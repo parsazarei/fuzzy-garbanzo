@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,73 +9,125 @@
 body {
   background: white;
   color: #222;
+  line-height: 1.6;
 }
 
-header {
-  padding: 20px 40px;
-  background: white;
-  border-bottom: 1px solid #eee;
-}
-
-nav {
+/* Navigation Bar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav .logo {
-  font-size: 1.5rem;
+.navbar .logo {
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
-nav ul {
+.nav-links {
   display: flex;
   gap: 20px;
   list-style: none;
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
-  color: #222;
+  color: #333;
   font-weight: 500;
 }
 
+/* Hero Section */
 .hero {
+  position: relative;
+  background-image: url('hero1.jpg'); /* Replace with your actual image */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  padding: 60px 40px;
+  justify-content: center;
 }
 
-.hero-text {
-  max-width: 500px;
+.overlay {
+  background: rgba(255, 255, 255, 0.7); /* Light overlay */
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 600px;
 }
 
-.hero-text h1 {
-  font-size: 2.8rem;
+.overlay h1 {
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 
-.hero-text p {
-  font-size: 1.1rem;
+.overlay p {
+  font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #555;
+  color: #444;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 20px;
+  padding: 12px 24px;
   background-color: #000;
   color: white;
-  border-radius: 4px;
   text-decoration: none;
+  border-radius: 6px;
   font-weight: bold;
+  transition: background 0.3s;
 }
 
-.hero-image img {
-  max-width: 600px;
+.btn:hover {
+  background-color: #333;
+}
+
+/* Cards Section */
+.cards-section {
+  padding: 60px 40px;
+  background-color: #f9f9f9;
+}
+
+.cards-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.card img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin: 15px 0 5px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  padding: 0 10px;
+  color: #555;
 }
