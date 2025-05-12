@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tadbeer Kitchen</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Carousel switching logic */
+    .hero img { display: none; }
+    .hero img.active { display: block; }
+  </style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -19,8 +24,13 @@
     </nav>
   </header>
 
-  <!-- Hero Section (Light Mode) -->
+  <!-- Hero Section with Image Carousel -->
   <section class="hero">
+    <img src="dish1.jpg" class="active" alt="Dish 1">
+    <img src="dish2.jpg" alt="Dish 2">
+    <img src="dish3.jpg" alt="Dish 3">
+    <img src="dish4.jpg" alt="Dish 4">
+    <img src="dish5.jpg" alt="Dish 5">
     <div class="overlay">
       <h1>Delicious Meals</h1>
       <p>Crafted with heritage, science, and love.</p>
@@ -49,5 +59,17 @@
       </div>
     </div>
   </section>
+
+  <script>
+    // JavaScript to rotate hero images every 5 seconds
+    const images = document.querySelectorAll('.hero img');
+    let index = 0;
+
+    setInterval(() => {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 5000);
+  </script>
 </body>
 </html>
