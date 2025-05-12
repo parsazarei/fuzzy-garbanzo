@@ -5,8 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fuzzy Garbanzo</title>
-
-  <!-- Link to CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,12 +20,9 @@
     </nav>
   </header>
 
-  <!-- Hero: single-column with background + overlay -->
+  <!-- Hero Section -->
   <section class="hero">
-    <!-- Dark overlay layer -->
     <div class="overlay"></div>
-
-    <!-- Text content sits above the overlay -->
     <div class="hero-content">
       <h1>Delicious Meals</h1>
       <p>Savor the flavors of our homemade dishes crafted with care and heritage.</p>
@@ -35,17 +30,29 @@
     </div>
   </section>
 
-  <!-- Cards Section (unchanged) -->
+  <!-- Featured Dishes Cards -->
   <section id="menu" class="cards-section">
     <h2>Featured Dishes</h2>
     <div class="card-grid">
-      <div class="card"><img src="dish1.jpg" alt="Ghormeh Sabzi" /><h3>Ghormeh Sabzi</h3><p>Slow-cooked herb stew with kidney beans and dried lime.</p></div>
-      <div class="card"><img src="dish2.jpg" alt="Kabob Koobideh" /><h3>Kabob Koobideh</h3><p>Skewered ground meat served with grilled tomato and saffron rice.</p></div>
-      <div class="card"><img src="dish3.jpg" alt="Fesenjan" /><h3>Fesenjan</h3><p>Walnut and pomegranate stew with tender chicken.</p></div>
+      <div class="card">
+        <img src="dish1.jpg" alt="Ghormeh Sabzi" />
+        <h3>Ghormeh Sabzi</h3>
+        <p>Slow-cooked herb stew with kidney beans and dried lime.</p>
+      </div>
+      <div class="card">
+        <img src="dish2.jpg" alt="Kabob Koobideh" />
+        <h3>Kabob Koobideh</h3>
+        <p>Skewered ground meat served with grilled tomato and saffron rice.</p>
+      </div>
+      <div class="card">
+        <img src="dish3.jpg" alt="Fesenjan" />
+        <h3>Fesenjan</h3>
+        <p>Walnut and pomegranate stew with tender chicken.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Script: rotate hero background through card images -->
+  <!-- Rotate Hero Background Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const hero = document.querySelector('.hero');
@@ -55,7 +62,7 @@
       setInterval(() => {
         idx = (idx + 1) % sources.length;
         hero.style.backgroundImage = `url('${sources[idx]}')`;
-      }, 2000); // 2000 ms = 2 seconds
+      }, 2000); // 2 seconds
     });
   </script>
 </body>
