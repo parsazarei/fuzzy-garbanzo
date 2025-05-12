@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tadbeer Kitchen</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Navigation Bar -->
   <header>
     <nav class="navbar">
       <div class="logo">Tadbeer Kitchen</div>
@@ -19,9 +19,16 @@
     </nav>
   </header>
 
-  <!-- Hero (Static Light Background) -->
+  <!-- Hero Section with Light-Mode Carousel -->
   <section class="hero">
-    <!-- The background image is set in CSS -->
+    <!-- Carousel Images: dish1.jpg through dish5.jpg -->
+    <img src="dish1.jpg" class="active" alt="Dish 1" />
+    <img src="dish2.jpg" alt="Dish 2" />
+    <img src="dish3.jpg" alt="Dish 3" />
+    <img src="dish4.jpg" alt="Dish 4" />
+    <img src="dish5.jpg" alt="Dish 5" />
+
+    <!-- Overlay Content -->
     <div class="overlay">
       <h1>Delicious Meals</h1>
       <p>Crafted with heritage, science, and love.</p>
@@ -29,26 +36,37 @@
     </div>
   </section>
 
-  <!-- Cards Grid -->
+  <!-- Featured Dishes Card Section -->
   <section id="menu" class="cards-section">
     <h2>Featured Dishes</h2>
     <div class="card-grid">
       <div class="card">
-        <img src="dish1.jpg" alt="Dish 1">
+        <img src="dish1.jpg" alt="Ghormeh Sabzi" />
         <h3>Ghormeh Sabzi</h3>
         <p>Slow-cooked herb stew with kidney beans and dried lime.</p>
       </div>
       <div class="card">
-        <img src="dish2.jpg" alt="Dish 2">
+        <img src="dish2.jpg" alt="Kabob Koobideh" />
         <h3>Kabob Koobideh</h3>
         <p>Skewered ground meat served with grilled tomato and saffron rice.</p>
       </div>
       <div class="card">
-        <img src="dish3.jpg" alt="Dish 3">
+        <img src="dish3.jpg" alt="Fesenjan" />
         <h3>Fesenjan</h3>
         <p>Walnut and pomegranate stew with tender chicken.</p>
       </div>
     </div>
   </section>
+
+  <!-- Carousel Script -->
+  <script>
+    const slides = document.querySelectorAll('.hero img');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
+  </script>
 </body>
 </html>
