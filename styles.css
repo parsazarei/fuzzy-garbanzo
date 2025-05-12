@@ -173,3 +173,36 @@ body {
   font-size: 0.95rem;
   padding: 0 10px;
 }
+/* ───── Mobile adjustments ───── */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;    /* stack text over image */
+    height: auto;              /* let it grow naturally */
+    padding: 20px;             /* smaller padding all around */
+  }
+
+  .hero-content {
+    transform: none;           /* remove translateY */
+    max-width: 100%;           /* full width on mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;           /* smaller headline */
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;           /* smaller subtext */
+    margin-bottom: 20px;
+  }
+
+  .hero-image {
+    width: 100%;               /* full-width image */
+    margin-top: 20px;          /* spacing under text */
+  }
+
+  .hero-image img {
+    max-height: 300px;         /* optional cap on image height */
+    object-fit: cover;         /* fill nicely */
+  }
+}
