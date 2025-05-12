@@ -12,6 +12,12 @@ body {
   line-height: 1.6;
 }
 
+/* Dark Mode Styles (toggle by adding `dark` class to body) */
+body.dark {
+  background: #000;
+  color: #fff;
+}
+
 /* Navigation Bar */
 .navbar {
   display: flex;
@@ -23,6 +29,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+body.dark .navbar {
+  background: #111;
+  border-color: #333;
 }
 
 .navbar .logo {
@@ -41,25 +51,45 @@ body {
   color: #333;
   font-weight: 500;
 }
-
-/* Hero Section */
-.hero {
-  position: relative;
-  background-image: url('dish1.jpg'); /* Replace with your actual image */
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body.dark .nav-links a {
+  color: #ddd;
 }
 
+/* Hero Carousel Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero img.active {
+  opacity: 1;
+}
+
+/* Overlay Content (Light Mode) */
 .overlay {
-  background: rgba(255, 255, 255, 0.7); /* Light overlay */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
   padding: 40px;
   border-radius: 12px;
   text-align: center;
   max-width: 600px;
+  z-index: 2;
 }
 
 .overlay h1 {
@@ -88,10 +118,28 @@ body {
   background-color: #333;
 }
 
+/* Overlay Content (Dark Mode) */
+body.dark .overlay {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+body.dark .btn {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark .btn:hover {
+  background-color: #ddd;
+}
+
 /* Cards Section */
 .cards-section {
   padding: 60px 40px;
   background-color: #f9f9f9;
+}
+body.dark .cards-section {
+  background-color: #111;
 }
 
 .cards-section h2 {
@@ -114,6 +162,10 @@ body {
   text-align: center;
   padding-bottom: 20px;
 }
+body.dark .card {
+  background: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
 
 .card img {
   width: 100%;
@@ -130,4 +182,8 @@ body {
   font-size: 0.95rem;
   padding: 0 10px;
   color: #555;
+}
+body.dark .card h3,
+body.dark .card p {
+  color: #ddd;
 }
