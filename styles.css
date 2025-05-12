@@ -1,208 +1,86 @@
-/*──────────────────── Reset & Global Styles ────────────────────*/
-
-/* Remove default margins/padding and set global font */
+/*── Reset & Global ──*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;              
+  margin: 0; padding: 0; box-sizing: border-box;
   font-family: 'Helvetica Neue', sans-serif;
 }
-
-/* Body background, text color, and line spacing */
 body {
-  background: #fff;                     /* white background */
-  color: #222;                          /* dark gray text */
-  line-height: 1.6;                     /* readable line height */
+  background: #fff; color: #222; line-height: 1.6;
 }
 
-/*──────────────────── Navigation Bar ────────────────────*/
-
+/*── Navigation Bar ──*/
 .navbar {
-  display: flex;                        
-  justify-content: space-between;       /* logo left, links right */
-  align-items: center;                  
-  padding: 20px 40px;                   
-  background: #fff;                     
-  border-bottom: 1px solid #eee;        
-  position: sticky;                     
-  top: 0;                               
-  z-index: 1000;                        
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 40px; background: #fff; border-bottom: 1px solid #eee;
+  position: sticky; top: 0; z-index: 1000;
 }
+.navbar .logo { font-size: 2rem; font-weight: bold; }
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 500; font-size: 1.1rem; }
 
-/* Logo text styling */
-.navbar .logo {
-  font-size: 2rem;     /* bumped up for better readability */
-  font-weight: bold;
-}
-
-/* List of nav links: horizontal flex */
-.nav-links {
-  list-style: none;                     
-  display: flex;
-  gap: 20px;                            
-}
-
-/* Anchor tags inside nav links */
-.nav-links a {
-  text-decoration: none;               
-  color: #333;                         
-  font-weight: 500;
-  font-size: 1.1rem;    /* explicit size on links */
-}
-
-/*──────────────────── Hero Section ────────────────────*/
-
-/* ───── Override hero size ───── */
+/*── Hero Section (overlay approach) ──*/
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 700px;        /* ↑ make bigger */
-  min-height: 500px;    /* never smaller than this */
-  padding: 0 40px;
-  background: #fff;
-}
-
-
-/* Left column: text block */
-.hero-content {
-  flex: 1;                  /* fill available space */
-  max-width: 600px;         
-  /* optional text-nudge */
-  transform: translateY(-10px);  
-}
-
-/* Hero headline */
-.hero-content h1 {
-  font-size: 3rem !important;
-  margin-bottom: 20px !important;
-}
-
-
-
-/* Hero subtext */
-.hero-content p {
-  font-size: 1.2rem;                    
-  margin-bottom: 30px;                  
-  color: #444;                          
-}
-
-/* Primary button */
-.btn {
-  display: inline-block;               
-  padding: 12px 24px;                  
-  background: #000;                     
-  color: #fff;                          
-  text-decoration: none;               
-  border-radius: 6px;                   
-  font-weight: bold;                    
-  font-size: 1rem;                      
-  transition: background 0.3s;          
-}
-
-/* Button hover state */
-.btn:hover {
-  background: #333;                     
-}
-
-/* Right column: image container */
-.hero-image {
-  flex: 1;                           
-  height: 100%;                      /* fill hero height */
-  overflow: hidden;                  /* crop overflow */
-  display: flex;                     
-  align-items: center;               /* center image vertically */
-  justify-content: center;           /* center image horizontally */
-}
-
-/* Hero image styling */
-.hero-image img {
-  max-width: 100%;       /* never exceed container width */
-  max-height: 100%;      /* never exceed container height */
-  object-fit: contain;   /* show whole image, letterboxed if needed */
-  border-radius: 12px;   
-}
-
-/*──────────────────── Cards Section (unchanged) ────────────────────*/
-
-.cards-section {
-  padding: 60px 40px;                  
-  background: #f9f9f9;                 
-}
-
-/* Section heading */
-.cards-section h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-/* Grid layout for cards */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;                            
-}
-
-/* Individual card */
-.card {
-  background: #fff;                     
-  border-radius: 12px;                  
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-  overflow: hidden;
-  text-align: center;
-  padding-bottom: 20px;                 
-}
-
-/* Card images */
-.card img {
+  position: relative;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 60vh;          /* 60% of viewport height */
+  min-height: 400px;     /* never shorter than this */
+  background-image: url('dish1.jpg');  /* initial image */
+  background-size: cover;
+  background-position: center;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
 }
+.overlay {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; color: #fff;
+  padding: 0 20px; max-width: 90%;
+}
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 10px;
+}
+.hero-content p {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  margin-bottom: 20px;
+}
+.btn {
+  display: inline-block; padding: 12px 24px;
+  background: #fff; color: #000; text-decoration: none;
+  border-radius: 6px; font-weight: bold;
+  transition: background 0.3s;
+}
+.btn:hover { background: #eee; }
 
-/* Card title */
-.card h3 {
-  margin: 15px 0 5px;
-  font-size: 1.6rem;    /* bumped for emphasis */
+/*── Cards Section (unchanged) ──*/
+.cards-section {
+  padding: 60px 40px; background: #f9f9f9;
 }
+.cards-section h2 {
+  font-size: 2rem; margin-bottom: 40px; text-align: center;
+}
+.card-grid {
+  display: grid; gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+  background: #fff; border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden; text-align: center; padding-bottom: 20px;
+}
+.card img {
+  width: 100%; height: 200px; object-fit: cover;
+}
+.card h3 { margin: 15px 0 5px; font-size: 1.6rem; }
+.card p { color: #555; font-size: 0.95rem; padding: 0 10px; }
 
-/* Card description */
-.card p {
-  color: #555;
-  font-size: 0.95rem;
-  padding: 0 10px;
-}
-/* ───── Mobile adjustments ───── */
+/*── Mobile tweaks ──*/
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;    /* stack text over image */
-    height: auto;              /* let it grow naturally */
-    padding: 20px;             /* smaller padding all around */
-  }
-
-  .hero-content {
-    transform: none;           /* remove translateY */
-    max-width: 100%;           /* full width on mobile */
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;           /* smaller headline */
-    margin-bottom: 10px;
-  }
-
-  .hero-content p {
-    font-size: 1rem;           /* smaller subtext */
-    margin-bottom: 20px;
-  }
-
-  .hero-image {
-    width: 100%;               /* full-width image */
-    margin-top: 20px;          /* spacing under text */
-  }
-
-  .hero-image img {
-    max-height: 300px;         /* optional cap on image height */
-    object-fit: cover;         /* fill nicely */
-  }
+  .hero { height: auto; padding: 40px 20px; }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p  { font-size: 1rem; }
 }
