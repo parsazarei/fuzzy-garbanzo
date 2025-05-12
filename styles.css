@@ -45,7 +45,7 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  background-image: url('hero1.jpg'); /* Replace with your actual image */
+  background-image: url('dish.jpg'); /* Replace with your actual image */
   background-size: cover;
   background-position: center;
   height: 90vh;
