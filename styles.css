@@ -41,14 +41,14 @@ body {
 
 /*──────────────────── Hero Section ────────────────────*/
 .hero {
+  /* Mobile-first: let content size itself */
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;      /* keeps a 16:9 ratio */
-  max-height: 500px;         /* never taller than this */
+  height: auto;
+  padding: 40px 20px;
   background-image: url('dish1.jpg');
-  background-size: contain;  /* fit the whole image */
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,8 +57,8 @@ body {
 .overlay {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 .hero-content {
@@ -70,11 +70,11 @@ body {
   max-width: 90%;
 }
 .hero-content h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   margin-bottom: 10px;
 }
 .hero-content p {
-  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-size: clamp(1rem, 3vw, 1.2rem);
   margin-bottom: 20px;
 }
 .btn {
@@ -91,10 +91,11 @@ body {
   background: #eee;
 }
 
-/*──────────────────── Cards Section (unchanged) ────────────────────*/
+/*──────────────────── Cards Section ────────────────────*/
 .cards-section {
-  padding: 60px 40px;
-  background: #f9f9f9;
+  /* Mobile-first padding & white background */
+  padding: 40px 20px;
+  background: #f9f9f9;  /* graye */
 }
 .cards-section h2 {
   font-size: 2rem;
@@ -103,8 +104,8 @@ body {
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 .card {
   background: #fff;
@@ -129,17 +130,27 @@ body {
   padding: 0 10px;
 }
 
-/*──────────────────── Mobile Adjustments ────────────────────*/
+/*──────────────────── Mobile Adjustments (≤768px) ────────────────────*/
 @media (max-width: 768px) {
-  .hero {
-    aspect-ratio: auto;
-    height: auto;
-    padding: 40px 20px;
-  }
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .hero-content p {
     font-size: 1rem;
+  }
+}
+
+/*──────────────────── Desktop Enhancements (≥1024px) ────────────────────*/
+@media (min-width: 1024px) {
+  /* Hero: fixed ratio & extra padding */
+  .hero {
+    aspect-ratio: 16 / 9;
+    max-height: 500px;
+    padding: 0 40px;
+  }
+
+  /* Cards: more breathing room */
+  .cards-section {
+    padding: 80px 60px;
   }
 }
