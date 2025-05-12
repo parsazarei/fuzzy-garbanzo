@@ -57,9 +57,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 700px;        /* ↑ make bigger */
+  height: 650px;        /* ↑ make bigger */
   min-height: 500px;    /* never smaller than this */
-  padding: 0 40px;
+  padding: 0 0px;
   background: #fff;
 }
 
