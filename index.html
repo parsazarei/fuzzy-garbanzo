@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tadbeer Kitchen</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Navigation Bar -->
   <header>
-    <nav>
+    <nav class="navbar">
       <div class="logo">Tadbeer Kitchen</div>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
@@ -18,17 +19,35 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Delicious Meals</h1>
-        <p>Savor the flavors of our homemade dishes crafted with care and heritage.</p>
-        <a href="#" class="btn">View Menu</a>
+  <!-- Hero Section (Light Mode) -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>Delicious Meals</h1>
+      <p>Crafted with heritage, science, and love.</p>
+      <a href="#menu" class="btn">View Menu</a>
+    </div>
+  </section>
+
+  <!-- Featured Dishes Card Section -->
+  <section id="menu" class="cards-section">
+    <h2>Featured Dishes</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="dish1.jpg" alt="Ghormeh Sabzi">
+        <h3>Ghormeh Sabzi</h3>
+        <p>Slow-cooked herb stew with kidney beans and dried lime.</p>
       </div>
-      <div class="hero-image">
-        <img src="dish.jpg" alt="Delicious Persian Dish" />
+      <div class="card">
+        <img src="dish2.jpg" alt="Kabob Koobideh">
+        <h3>Kabob Koobideh</h3>
+        <p>Skewered ground meat served with grilled tomato and saffron rice.</p>
       </div>
-    </section>
-  </main>
+      <div class="card">
+        <img src="dish3.jpg" alt="Fesenjan">
+        <h3>Fesenjan</h3>
+        <p>Walnut and pomegranate stew with tender chicken.</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
