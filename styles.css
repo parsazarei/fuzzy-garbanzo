@@ -1,123 +1,160 @@
-/* Reset & Global */
+/*──────────────────── Reset & Global Styles ────────────────────*/
+
+/* Remove default margins/padding and set global font */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;              /* include padding in element width/height */
   font-family: 'Helvetica Neue', sans-serif;
 }
+
+/* Body background, text color, and line spacing */
 body {
-  background: #fff;
-  color: #222;
-  line-height: 1.6;
+  background: #fff;                     /* white background */
+  color: #222;                          /* dark gray text */
+  line-height: 1.6;                     /* readable line height */
 }
 
-/* Navigation */
+/*──────────────────── Navigation Bar ────────────────────*/
+
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  display: flex;                        
+  justify-content: space-between;       /* logo on left, links on right */
+  align-items: center;                  /* vertically center items */
+  padding: 20px 40px;                   /* spacing inside navbar */
+  background: #fff;                     /* white background */
+  border-bottom: 1px solid #eee;        /* subtle bottom border */
+  position: sticky;                     
+  top: 0;                               /* stick to top on scroll */
+  z-index: 1000;                        /* above other content */
 }
+
+/* Logo text styling */
 .navbar .logo {
-  font-size: 1.6rem;
+  font-size: 1.6rem;                    
   font-weight: bold;
 }
+
+/* List of nav links: horizontal flex */
 .nav-links {
-  list-style: none;
+  list-style: none;                     
   display: flex;
-  gap: 20px;
+  gap: 20px;                            /* space between links */
 }
+
+/* Anchor tags inside nav links */
 .nav-links a {
-  text-decoration: none;
-  color: #333;
+  text-decoration: none;               
+  color: #333;                         
   font-weight: 500;
 }
 
-/* Hero Section */
+/*──────────────────── Hero Section ────────────────────*/
+
 .hero {
-  display: flex;
-  align-items: center;       /* keep vertical centering */
-  justify-content: space-between;
-  padding: 60px 40px;        /* original padding */
-  background: #fff;
+  display: flex;                        
+  align-items: center;                  /* center both columns vertically */
+  justify-content: space-between;       /* space between text and image */
+  padding: 60px 40px;                   /* generous top/bottom and side padding */
+  background: #fff;                     
 }
 
+/* Left column: text block */
 .hero-content {
-  flex: 1;
-  max-width: 600px;
-  transform: translateY(-10px);  /* nudge text up by 10px */
+  flex: 1;                              /* grow to fill available space */
+  max-width: 600px;                     /* limit how wide it can go */
+  transform: translateY(-10px);         /* nudge the text up slightly */
 }
 
+/* Hero headline */
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #444;
-}
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-.btn:hover {
-  background: #333;
-}
-.hero-image {
-  flex: 1;
-  text-align: right;
-}
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
+  font-size: 3rem;                      
+  margin-bottom: 20px;                  
 }
 
-/* Cards Section (unchanged) */
-.cards-section {
-  padding: 60px 40px;
-  background: #f9f9f9;
+/* Hero subtext */
+.hero-content p {
+  font-size: 1.2rem;                    
+  margin-bottom: 30px;                  
+  color: #444;                          
 }
+
+/* Primary button */
+.btn {
+  display: inline-block;               
+  padding: 12px 24px;                  
+  background: #000;                     
+  color: #fff;                          
+  text-decoration: none;               
+  border-radius: 6px;                   
+  font-weight: bold;                    
+  transition: background 0.3s;         
+}
+
+/* Button hover state */
+.btn:hover {
+  background: #333;                     
+}
+
+/* Right column: image */
+.hero-image {
+  flex: 1;                              /* grow to fill space */
+  text-align: right;                   
+}
+
+/* Hero image styling */
+.hero-image img {
+  width: 100%;                          /* full width of its container */
+  height: auto;                         
+  border-radius: 12px;                  
+  object-fit: cover;                    
+}
+
+/*──────────────────── Cards Section (unchanged) ────────────────────*/
+
+.cards-section {
+  padding: 60px 40px;                   /* spacing around cards area */
+  background: #f9f9f9;                  /* light gray background */
+}
+
+/* Section heading */
 .cards-section h2 {
   font-size: 2rem;
   margin-bottom: 40px;
   text-align: center;
 }
+
+/* Grid layout for cards */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 30px;                            /* space between cards */
 }
+
+/* Individual card */
 .card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff;                     
+  border-radius: 12px;                  
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle drop shadow */
   overflow: hidden;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 20px;                 
 }
+
+/* Card images */
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
+
+/* Card title */
 .card h3 {
   margin: 15px 0 5px;
   font-size: 1.4rem;
 }
+
+/* Card description */
 .card p {
   color: #555;
   font-size: 0.95rem;
