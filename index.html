@@ -4,12 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tadbeer Kitchen</title>
+  <!-- Link to external CSS for all styling, including carousel -->
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Carousel switching logic */
-    .hero img { display: none; }
-    .hero img.active { display: block; }
-  </style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -26,11 +22,14 @@
 
   <!-- Hero Section with Image Carousel -->
   <section class="hero">
+    <!-- Replace dish1 through dish5 with your actual filenames -->
     <img src="dish1.jpg" class="active" alt="Dish 1">
     <img src="dish2.jpg" alt="Dish 2">
     <img src="dish3.jpg" alt="Dish 3">
     <img src="dish4.jpg" alt="Dish 4">
     <img src="dish5.jpg" alt="Dish 5">
+
+    <!-- Overlay content sits on top of the carousel images -->
     <div class="overlay">
       <h1>Delicious Meals</h1>
       <p>Crafted with heritage, science, and love.</p>
@@ -60,11 +59,10 @@
     </div>
   </section>
 
+  <!-- Carousel script toggles the .active class on hero images -->
   <script>
-    // JavaScript to rotate hero images every 5 seconds
     const images = document.querySelectorAll('.hero img');
     let index = 0;
-
     setInterval(() => {
       images[index].classList.remove('active');
       index = (index + 1) % images.length;
