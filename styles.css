@@ -41,7 +41,7 @@ body {
 
 /*──────────────────── Hero Section ────────────────────*/
 .hero {
-  /* Mobile-first: let content size itself */
+  /* Mobile-first base */
   position: relative;
   width: 100%;
   height: auto;
@@ -93,9 +93,8 @@ body {
 
 /*──────────────────── Cards Section ────────────────────*/
 .cards-section {
-  /* Mobile-first padding & white background */
   padding: 40px 20px;
-  background: #f9f9f9;  /* graye */
+  background: #fff;
 }
 .cards-section h2 {
   font-size: 2rem;
@@ -145,7 +144,8 @@ body {
   /* Hero: fixed ratio & extra padding */
   .hero {
     aspect-ratio: 16 / 9;
-    max-height: 500px;
+-   max-height: 500px;
++   max-height: 400px;    /* scaled down for laptops */
     padding: 0 40px;
   }
 
