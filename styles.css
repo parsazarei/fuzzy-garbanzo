@@ -1,159 +1,98 @@
-/* Global Styles */
+/* Reset & Global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Helvetica Neue', sans-serif;
 }
-
 body {
-  background: white;
+  background: #fff;
   color: #222;
   line-height: 1.6;
 }
 
-/* Dark Mode Styles (toggle by adding `dark` class to body) */
-body.dark {
-  background: #000;
-  color: #fff;
-}
-
-/* Navigation Bar */
+/* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
   background: #fff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-body.dark .navbar {
-  background: #111;
-  border-color: #333;
-}
-
 .navbar .logo {
   font-size: 1.6rem;
   font-weight: bold;
 }
-
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 20px;
-  list-style: none;
 }
-
 .nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
-body.dark .nav-links a {
-  color: #ddd;
-}
 
-/* Hero Carousel Section */
+/* Hero */
 .hero {
   position: relative;
-  width: 100%;
   height: 90vh;
-  overflow: hidden;
+  background: url('dish1.jpg') center/cover no-repeat;
 }
-
-.hero img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.hero img.active {
-  opacity: 1;
-}
-
-/* Overlay Content (Light Mode) */
-.overlay {
+.hero .overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255,255,255,0.8);
   padding: 40px;
   border-radius: 12px;
   text-align: center;
   max-width: 600px;
-  z-index: 2;
 }
-
-.overlay h1 {
+.hero .overlay h1 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
-
-.overlay p {
+.hero .overlay p {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #444;
 }
-
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #000;
-  color: white;
+  background: #000;
+  color: #fff;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
   transition: background 0.3s;
 }
-
 .btn:hover {
-  background-color: #333;
-}
-
-/* Overlay Content (Dark Mode) */
-body.dark .overlay {
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-}
-
-body.dark .btn {
-  background-color: #fff;
-  color: #000;
-}
-
-body.dark .btn:hover {
-  background-color: #ddd;
+  background: #333;
 }
 
 /* Cards Section */
 .cards-section {
   padding: 60px 40px;
-  background-color: #f9f9f9;
+  background: #f9f9f9;
 }
-body.dark .cards-section {
-  background-color: #111;
-}
-
 .cards-section h2 {
   font-size: 2rem;
   margin-bottom: 40px;
   text-align: center;
 }
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
-
 .card {
   background: #fff;
   border-radius: 12px;
@@ -162,28 +101,17 @@ body.dark .cards-section {
   text-align: center;
   padding-bottom: 20px;
 }
-body.dark .card {
-  background: #222;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-
 .card h3 {
-  font-size: 1.4rem;
   margin: 15px 0 5px;
+  font-size: 1.4rem;
 }
-
 .card p {
+  color: #555;
   font-size: 0.95rem;
   padding: 0 10px;
-  color: #555;
-}
-body.dark .card h3,
-body.dark .card p {
-  color: #ddd;
 }
