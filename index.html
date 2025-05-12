@@ -19,20 +19,17 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Light-Mode Carousel -->
+  <!-- Hero Section -->
   <section class="hero">
-    <!-- Carousel Images: dish1.jpg through dish5.jpg -->
-    <img src="dish1.jpg" class="active" alt="Dish 1" />
-    <img src="dish2.jpg" alt="Dish 2" />
-    <img src="dish3.jpg" alt="Dish 3" />
-    <img src="dish4.jpg" alt="Dish 4" />
-    <img src="dish5.jpg" alt="Dish 5" />
-
-    <!-- Overlay Content -->
-    <div class="overlay">
-      <h1>Delicious Meals</h1>
-      <p>Crafted with heritage, science, and love.</p>
-      <a href="#menu" class="btn">View Menu</a>
+    <div class="hero-content">
+      <div class="overlay">
+        <h1>Delicious Meals</h1>
+        <p>Savor the flavors of our homemade dishes crafted with care and heritage.</p>
+        <a href="#menu" class="btn">View Menu</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="dish1.jpg" alt="Delicious plate of food" />
     </div>
   </section>
 
@@ -57,16 +54,5 @@
       </div>
     </div>
   </section>
-
-  <!-- Carousel Script -->
-  <script>
-    const slides = document.querySelectorAll('.hero img');
-    let current = 0;
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 5000);
-  </script>
 </body>
 </html>
