@@ -1,92 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Document metadata -->
+  <!-- Meta & Title -->
   <meta charset="UTF-8" />
-  <!-- Ensure proper scaling on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fuzzy Garbanzo</title>
-  <!-- Link to your external stylesheet -->
+
+  <!-- Link to CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ───── Navigation Bar ───── -->
+  <!-- Navigation Bar -->
   <header>
     <nav class="navbar">
-      <!-- Site logo / brand -->
       <div class="logo">Fuzzy Garbanzo</div>
-      <!-- Primary nav links -->
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>      <!-- Link to Home section -->
-        <li><a href="#">About</a></li>     <!-- Link to About section -->
-        <li><a href="#">Contact</a></li>   <!-- Link to Contact section -->
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ───── Hero Section ───── -->
+  <!-- Hero: single-column with background + overlay -->
   <section class="hero">
-    <!-- Left side: headline, description, CTA button -->
+    <!-- Dark overlay layer -->
+    <div class="overlay"></div>
+
+    <!-- Text content sits above the overlay -->
     <div class="hero-content">
-      <h1>Delicious Meals</h1>  
+      <h1>Delicious Meals</h1>
       <p>Savor the flavors of our homemade dishes crafted with care and heritage.</p>
-      <a href="#menu" class="btn">View Menu</a>  <!-- Scrolls down to menu cards -->
-    </div>
-
-    <!-- Right side: main image (will rotate through card images) -->
-    <div class="hero-image">
-      <!-- Starts with dish1.jpg by default -->
-      <img src="dish1.jpg" alt="Delicious plate of food" />
+      <a href="#menu" class="btn">View Menu</a>
     </div>
   </section>
 
-  <!-- ───── Featured Dishes Cards Section ───── -->
+  <!-- Cards Section (unchanged) -->
   <section id="menu" class="cards-section">
-    <!-- Section heading -->
     <h2>Featured Dishes</h2>
-    <!-- Grid of cards -->
     <div class="card-grid">
-      <!-- Card 1 -->
-      <div class="card">
-        <img src="dish1.jpg" alt="Ghormeh Sabzi" />
-        <h3>Ghormeh Sabzi</h3>
-        <p>Slow-cooked herb stew with kidney beans and dried lime.</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="card">
-        <img src="dish2.jpg" alt="Kabob Koobideh" />
-        <h3>Kabob Koobideh</h3>
-        <p>Skewered ground meat served with grilled tomato and saffron rice.</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="card">
-        <img src="dish3.jpg" alt="Fesenjan" />
-        <h3>Fesenjan</h3>
-        <p>Walnut and pomegranate stew with tender chicken.</p>
-      </div>
+      <div class="card"><img src="dish1.jpg" alt="Ghormeh Sabzi" /><h3>Ghormeh Sabzi</h3><p>Slow-cooked herb stew with kidney beans and dried lime.</p></div>
+      <div class="card"><img src="dish2.jpg" alt="Kabob Koobideh" /><h3>Kabob Koobideh</h3><p>Skewered ground meat served with grilled tomato and saffron rice.</p></div>
+      <div class="card"><img src="dish3.jpg" alt="Fesenjan" /><h3>Fesenjan</h3><p>Walnut and pomegranate stew with tender chicken.</p></div>
     </div>
   </section>
 
-  <!-- ───── Hero Image Rotation Script ───── -->
+  <!-- Script: rotate hero background through card images -->
   <script>
-    // Run after the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
-      // Select the <img> inside our .hero-image container
-      const heroImg = document.querySelector('.hero-image img');
-      // Grab all the <img> elements inside .card elements
-      const cards   = document.querySelectorAll('.card img');
-      
-      // Build arrays of image sources and alt-texts from the cards
+      const hero = document.querySelector('.hero');
+      const cards = document.querySelectorAll('.card img');
       const sources = Array.from(cards).map(img => img.src);
-      const alts    = Array.from(cards).map(img => img.alt);
-      
       let idx = 0;
-      // Every 5 seconds, advance to the next card image
       setInterval(() => {
-        idx = (idx + 1) % sources.length;  // wrap index around
-        heroImg.src = sources[idx];        // update hero image source
-        heroImg.alt = alts[idx];           // update hero image alt-text
-      }, 2000); // 5000ms = 5s
+        idx = (idx + 1) % sources.length;
+        hero.style.backgroundImage = `url('${sources[idx]}')`;
+      }, 2000); // 2000 ms = 2 seconds
     });
   </script>
 </body>
