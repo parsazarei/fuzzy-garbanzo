@@ -4,7 +4,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;              /* include padding in element width/height */
+  box-sizing: border-box;              
   font-family: 'Helvetica Neue', sans-serif;
 }
 
@@ -12,26 +12,26 @@
 body {
   background: #fff;                     /* white background */
   color: #222;                          /* dark gray text */
-  line-height: 2.2;                     /* readable line height */
+  line-height: 1.6;                     /* readable line height */
 }
 
 /*──────────────────── Navigation Bar ────────────────────*/
 
 .navbar {
   display: flex;                        
-  justify-content: space-between;       /* logo on left, links on right */
-  align-items: center;                  /* vertically center items */
-  padding: 20px 40px;                   /* spacing inside navbar */
-  background: #fff;                     /* white background */
-  border-bottom: 1px solid #eee;        /* subtle bottom border */
+  justify-content: space-between;       /* logo left, links right */
+  align-items: center;                  
+  padding: 20px 40px;                   
+  background: #fff;                     
+  border-bottom: 1px solid #eee;        
   position: sticky;                     
-  top: 0;                               /* stick to top on scroll */
-  z-index: 1000;                        /* above other content */
+  top: 0;                               
+  z-index: 1000;                        
 }
 
 /* Logo text styling */
 .navbar .logo {
-  font-size: 1.6rem;                    
+  font-size: 2rem;     /* bumped up for better readability */
   font-weight: bold;
 }
 
@@ -39,7 +39,7 @@ body {
 .nav-links {
   list-style: none;                     
   display: flex;
-  gap: 20px;                            /* space between links */
+  gap: 20px;                            
 }
 
 /* Anchor tags inside nav links */
@@ -47,23 +47,26 @@ body {
   text-decoration: none;               
   color: #333;                         
   font-weight: 500;
+  font-size: 1.1rem;    /* explicit size on links */
 }
 
 /*──────────────────── Hero Section ────────────────────*/
 
 .hero {
   display: flex;                        
-  align-items: center;                  /* center both columns vertically */
-  justify-content: space-between;       /* space between text and image */
-  padding: 60px 40px;                   /* generous top/bottom and side padding */
+  align-items: center;      /* center columns vertically */
+  justify-content: space-between;       
+  height: 400px;            /* fixed hero height */
+  padding: 0 40px;          /* horizontal padding only */
   background: #fff;                     
 }
 
 /* Left column: text block */
 .hero-content {
-  flex: 1;                              /* grow to fill available space */
-  max-width: 600px;                     /* limit how wide it can go */
-  transform: translateY(-10px);         /* nudge the text up slightly */
+  flex: 1;                  /* fill available space */
+  max-width: 600px;         
+  /* optional text-nudge */
+  transform: translateY(-10px);  
 }
 
 /* Hero headline */
@@ -74,7 +77,7 @@ body {
 
 /* Hero subtext */
 .hero-content p {
-  font-size: 2.2rem;                    
+  font-size: 1.2rem;                    
   margin-bottom: 30px;                  
   color: #444;                          
 }
@@ -88,7 +91,8 @@ body {
   text-decoration: none;               
   border-radius: 6px;                   
   font-weight: bold;                    
-  transition: background 0.3s;         
+  font-size: 1rem;                      
+  transition: background 0.3s;          
 }
 
 /* Button hover state */
@@ -96,25 +100,29 @@ body {
   background: #333;                     
 }
 
-/* Right column: image */
+/* Right column: image container */
 .hero-image {
-  flex: 1;                              /* grow to fill space */
-  text-align: right;                   
+  flex: 1;                           
+  height: 100%;                      /* fill hero height */
+  overflow: hidden;                  /* crop overflow */
+  display: flex;                     
+  align-items: center;               /* center image vertically */
+  justify-content: center;           /* center image horizontally */
 }
 
 /* Hero image styling */
 .hero-image img {
-  width: 100%;                          /* full width of its container */
-  height: auto;                         
-  border-radius: 12px;                  
-  object-fit: cover;                    
+  max-width: 100%;       /* never exceed container width */
+  max-height: 100%;      /* never exceed container height */
+  object-fit: contain;   /* show whole image, letterboxed if needed */
+  border-radius: 12px;   
 }
 
 /*──────────────────── Cards Section (unchanged) ────────────────────*/
 
 .cards-section {
-  padding: 60px 40px;                   /* spacing around cards area */
-  background: #f9f9f9;                  /* light gray background */
+  padding: 60px 40px;                  
+  background: #f9f9f9;                 
 }
 
 /* Section heading */
@@ -128,14 +136,14 @@ body {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;                            /* space between cards */
+  gap: 30px;                            
 }
 
 /* Individual card */
 .card {
   background: #fff;                     
   border-radius: 12px;                  
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle drop shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
   overflow: hidden;
   text-align: center;
   padding-bottom: 20px;                 
@@ -151,7 +159,7 @@ body {
 /* Card title */
 .card h3 {
   margin: 15px 0 5px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;    /* bumped for emphasis */
 }
 
 /* Card description */
