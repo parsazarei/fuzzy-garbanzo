@@ -41,14 +41,15 @@ body {
 /* Hero Section */
 .hero {
   display: flex;
-  align-items: center;
+  align-items: flex-start;      /* instead of center */
   justify-content: space-between;
-  padding: 60px 40px;
+  padding: 40px 40px 60px;      /* less top padding (was 60px) */
   background: #fff;
 }
 .hero-content {
   flex: 1;
   max-width: 600px;
+  margin-top: -20px;            /* pulls the content up by 20px */
 }
 .hero-content h1 {
   font-size: 3rem;
