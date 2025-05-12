@@ -52,14 +52,17 @@ body {
 
 /*──────────────────── Hero Section ────────────────────*/
 
+/* ───── Override hero size ───── */
 .hero {
-  display: flex;                        
-  align-items: center;      /* center columns vertically */
-  justify-content: space-between;       
-  height: 600px;            /* fixed hero height */
-  padding: 0 40px;          /* horizontal padding only */
-  background: #fff;                     
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 700px;        /* ↑ make bigger */
+  min-height: 500px;    /* never smaller than this */
+  padding: 0 40px;
+  background: #fff;
 }
+
 
 /* Left column: text block */
 .hero-content {
