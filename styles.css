@@ -41,16 +41,18 @@ body {
 /* Hero Section */
 .hero {
   display: flex;
-  align-items: flex-start;      /* instead of center */
+  align-items: center;       /* keep vertical centering */
   justify-content: space-between;
-  padding: 40px 40px 60px;      /* less top padding (was 60px) */
+  padding: 60px 40px;        /* original padding */
   background: #fff;
 }
+
 .hero-content {
   flex: 1;
   max-width: 600px;
-
+  transform: translateY(-10px);  /* nudge text up by 10px */
 }
+
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
