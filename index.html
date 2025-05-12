@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tadbeer Kitchen</title>
-  <!-- Link to external CSS for all styling, including carousel -->
+  <!-- Link to external CSS for all styling -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,16 +20,9 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Image Carousel -->
+  <!-- Hero Section (Static Light Background) -->
   <section class="hero">
-    <!-- Replace dish1 through dish5 with your actual filenames -->
-    <img src="dish1.jpg" class="active" alt="Dish 1">
-    <img src="dish2.jpg" alt="Dish 2">
-    <img src="dish3.jpg" alt="Dish 3">
-    <img src="dish4.jpg" alt="Dish 4">
-    <img src="dish5.jpg" alt="Dish 5">
-
-    <!-- Overlay content sits on top of the carousel images -->
+    <!-- background-image set in CSS -->
     <div class="overlay">
       <h1>Delicious Meals</h1>
       <p>Crafted with heritage, science, and love.</p>
@@ -58,16 +51,5 @@
       </div>
     </div>
   </section>
-
-  <!-- Carousel script toggles the .active class on hero images -->
-  <script>
-    const images = document.querySelectorAll('.hero img');
-    let index = 0;
-    setInterval(() => {
-      images[index].classList.remove('active');
-      index = (index + 1) % images.length;
-      images[index].classList.add('active');
-    }, 5000);
-  </script>
 </body>
 </html>
