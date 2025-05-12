@@ -59,7 +59,7 @@ body {
   justify-content: space-between;
   height: 700px;        /* ↑ make bigger */
   min-height: 500px;    /* never smaller than this */
-  padding: 0 4px;
+  padding: 0 40px;
   background: #fff;
 }
 
